@@ -1,4 +1,3 @@
-// import React from "react";
 import { Route, Routes } from "react-router-dom";
 import MailboxList from "../MailboxList/MailboxList";
 import MailboxForm from "../MailboxForm/MailboxForm";
