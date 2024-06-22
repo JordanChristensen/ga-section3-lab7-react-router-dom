@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import * as manageMailboxes from "./utils/manageMailboxes";
 import "./App.css";
@@ -22,32 +21,11 @@ function Mailbox() {
   return (
     <main>
       <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <main>
-              <h1>Post Office</h1>
-            </main>
-          }
-        />
-        <Route
-          path="/mailboxes"
-          element={<MailboxList />}
-          mailboxes={mailboxes}
-        />
-        <Route
-          path="/new-mailbox"
-          element={<MailboxForm />}
-          handleNewMailbox={handleNewMailbox}
-          setMailboxes={setMailboxes}
-        />
-        <Route
-          path="/mailboxes/:mailboxId"
-          element={<MailboxDetails />}
-          mailboxes={mailboxes}
-        />
-      </Routes>
+      <CustomRoutes
+        mailboxes={mailboxes}
+        setMailboxes={setMailboxes}
+        handleNewMailbox={handleNewMailbox}
+      />
     </main>
   );
 }
