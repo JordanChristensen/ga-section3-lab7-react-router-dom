@@ -3,13 +3,9 @@ import { ErrorBoundary } from "react-error-boundary";
 import * as manageMailboxes from "./utils/manageMailboxes";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import MailboxList from "./components/MailboxList/MailboxList";
-import MailboxForm from "./components/MailboxForm/MailboxForm";
-import MailboxDetails from "./components/MailboxDetails/MailboxDetails";
-
-function Fallback({ error }) {
-  return <section>Something went wrong: {error.message}</section>;
-}
+import CustomRoutes from "./components/Routes/Routes";
+import { initMailboxes } from "./data/initMailboxes";
+import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";
 
 function Mailbox() {
   const [mailboxes, setMailboxes] = useState(initMailboxState);
@@ -39,7 +35,7 @@ const initMailboxState = {
 export default function App() {
   return (
     <ErrorBoundary
-      FallbackComponent={Fallback}
+      FallbackComponent={fallbackForErrorBoundary}
       onError={(error, errorInfo) => {
         console.error("React-error-boundary caught an error", error, errorInfo);
       }}
