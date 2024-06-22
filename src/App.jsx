@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/NavBar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import MailboxList from "./components/MailboxList/MailboxList";
 import MailboxForm from "./components/MailboxForm/MailboxForm";
 import MailboxDetails from "./components/MailboxDetails/MailboxDetails";
@@ -36,10 +36,6 @@ const App = () => {
           mailboxes={mailboxes}
         />
       </Routes>
-      <h1>Hello world!</h1>
-      <MailboxList />
-      <MailboxForm />
-      <MailboxDetails />
     </main>
   );
 };
