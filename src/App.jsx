@@ -11,10 +11,30 @@ const App = () => {
       <Navbar />
 
       <Routes>
-        <Route path="/" />
-        <Route path="/mailboxes" />
-        <Route path="/new-mailbox" />
-        <Route path="/mailboxes/:mailboxId" />
+        <Route
+          path="/"
+          element={
+            <main>
+              <h1>Post Office</h1>
+            </main>
+          }
+        />
+        <Route
+          path="/mailboxes"
+          element={<MailboxList />}
+          mailboxes={mailboxes}
+        />
+        <Route
+          path="/new-mailbox"
+          element={<MailboxForm />}
+          handleNewMailbox={handleNewMailbox}
+          setMailboxes={setMailboxes}
+        />
+        <Route
+          path="/mailboxes/:mailboxId"
+          element={<MailboxDetails />}
+          mailboxes={mailboxes}
+        />
       </Routes>
       <h1>Hello world!</h1>
       <MailboxList />
