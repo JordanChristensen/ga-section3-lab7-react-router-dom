@@ -1,7 +1,6 @@
 import MailboxListItem from "./MailboxListItem";
 
 export default function MailboxList({ mailboxes }) {
-//   console.log(mailboxes);
   return (
     <section className="mailboxList">
       <h1>Mailbox list</h1>

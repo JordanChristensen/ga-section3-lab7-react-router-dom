@@ -11,7 +11,6 @@ export default function CustomRoutes({
   setMailboxes,
   handleNewMailbox,
 }) {
-  console.log(mailboxes);
   return (
     <Routes
       mailboxes={mailboxes}
