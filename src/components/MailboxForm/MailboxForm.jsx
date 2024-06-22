@@ -1,1 +1,3 @@
-export default function MailboxForm(){}
+export default function MailboxForm() {
+  return <h1>Mailbox form</h1>;
+}
