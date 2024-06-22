@@ -11,14 +11,6 @@ body {
   height: 100%;
 }
 
-ul {
-  padding: 0;
-  display: flex;
-  list-style: none;
-  li {
-    margin-right: 16px;
-  }
-}
 
 .mail-box {
   border: 2px solid white;
