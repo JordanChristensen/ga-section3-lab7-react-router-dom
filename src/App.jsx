@@ -2,9 +2,9 @@ import { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import * as manageMailboxes from "./utils/manageMailboxes";
 import "./App.css";
-import "./components/Components.css"
-import Navbar from "./components/Navbar/Navbar";
-import CustomRoutes from "./components/Routes/Routes";
+import "./components/Components.css";
+import Navbar from "./components/Navbar";
+import CustomRoutes from "./routes/Routes";
 import { initMailboxes } from "./data/initMailboxes";
 import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";
 
