@@ -8,7 +8,7 @@ import { initMailboxes } from "./data/initMailboxes";
 import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";
 
 function Mailbox() {
-  const [mailboxes, setMailboxes] = useState(initMailboxState);
+  const [mailboxes, setMailboxes] = useState(initMailboxes);
 
   function handleNewMailbox() {
     manageMailboxes.addBox;
@@ -25,12 +25,6 @@ function Mailbox() {
     </main>
   );
 }
-
-const initMailboxState = {
-  _id: null,
-  boxSize: "",
-  boxOwner: "",
-};
 
 export default function App() {
   return (
