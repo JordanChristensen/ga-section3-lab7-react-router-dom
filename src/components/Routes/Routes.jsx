@@ -5,6 +5,7 @@ import MailboxForm from "../MailboxForm/MailboxForm";
 import MailboxDetails from "../MailboxDetails/MailboxDetails";
 import LandingPage from "../LandingPage/LandingPage";
 import Four0Four from "../Four0Four/Four0Four";
+import LetterForm from "../LetterForm/LetterForm";
 
 export default function CustomRoutes({
   mailboxes,
@@ -30,6 +31,7 @@ export default function CustomRoutes({
         element={<MailboxDetails />}
         mailboxes={mailboxes}
       />
+      <Route path="/new-letter" element={<LetterForm />} />
       <Route path="*" element={<Four0Four />} />
     </Routes>
   );
