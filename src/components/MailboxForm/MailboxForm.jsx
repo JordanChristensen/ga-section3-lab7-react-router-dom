@@ -1,3 +1,3 @@
 export default function MailboxForm() {
-  return <h1>Mailbox form</h1>;
+  return <h1>New mailbox</h1>;
 }
