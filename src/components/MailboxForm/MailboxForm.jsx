@@ -1,4 +1,5 @@
 import MailboxFormInput from "./MailboxFormInput";
+import MailboxFormSelect from "./MailboxFormSelect";
 
 export default function MailboxForm({
   mailboxes,
@@ -28,12 +29,7 @@ export default function MailboxForm({
           label={"Enter a boxholder:"}
           handleInputChange={handleInputChange}
         />
-        <label htmlFor="boxSize">Select a box size:</label>
-        <select name="boxSize" id="boxSize">
-          <option value="Small">Small</option>
-          <option value="Medium">Medium</option>
-          <option value="Large">Large</option>
-        </select>
+        <MailboxFormSelect id={"boxSize"} label={"Select a box size:"} />
         <button onClick={() => handleSubmit(newMailbox)}>Add book</button>
       </form>
     </section>
