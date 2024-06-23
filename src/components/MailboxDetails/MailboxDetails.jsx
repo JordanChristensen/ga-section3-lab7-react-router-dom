@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import MailboxDetailsTable from "./MailboxDetailsTable";
 
 export default function MailboxDetails({ mailboxes }) {
   const thisMailboxId = useParams();
@@ -14,18 +15,7 @@ export default function MailboxDetails({ mailboxes }) {
     <section>
       <h1>Mailbox {thisMailbox._id}</h1>
       <h3>Details</h3>
-      <table>
-        <tbody>
-          <tr>
-            <th>Boxholder: </th>
-            <td>{thisMailbox.boxholder}</td>
-          </tr>
-          <tr>
-            <th>Box Size: </th>
-            <td>{thisMailbox.boxSize}</td>
-          </tr>
-        </tbody>
-      </table>
+      <MailboxDetailsTable thisMailbox={thisMailbox} />
     </section>
   );
 }
