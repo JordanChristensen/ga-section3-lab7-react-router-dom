@@ -11,7 +11,6 @@ body {
   height: 100%;
 }
 
-
 .mail-box {
   border: 2px solid white;
   padding: 20px;
@@ -20,6 +19,7 @@ body {
 form {
   display: flex;
   flex-direction: column;
+  width: 80vw;
   input,
   select,
   textarea {

@@ -26,3 +26,4 @@ dist-ssr
 # Jordan's additions - to build muscle memory through practice
 package-lock.json
 .env
+notes.md
