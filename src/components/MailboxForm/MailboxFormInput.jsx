@@ -4,6 +4,7 @@ export default function MailboxFormInput({
   label,
   handleInputChange,
 }) {
+  
   return (
     <>
       <label htmlFor={id}>{label}</label>

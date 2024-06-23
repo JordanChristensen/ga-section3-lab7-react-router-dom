@@ -9,7 +9,13 @@ import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";
 
 function Mailbox() {
   const [mailboxes, setMailboxes] = useState(initMailboxes);
-  const [newMailbox, setNewMailbox] = useState([]);
+  //
+  //
+  // ------------------ @HERE: how to track form data??? ------------------
+  // const [newMailboxBoxholder, setNewMailboxBoxholder] = useState([]);
+  // ----------------------------------------------------------------------
+  //
+  //
 
   function handleNewMailbox() {
     manageMailboxes.addBox;
@@ -21,8 +27,10 @@ function Mailbox() {
       <CustomRoutes
         mailboxes={mailboxes}
         setMailboxes={setMailboxes}
-        newMailbox={newMailbox}
-        setNewMailbox={setNewMailbox}
+        // ------------------ @HERE: how to track form data??? ------------------
+        // newMailboxBoxholder={newMailboxBoxholder}
+        // setNewMailboxBoxholder={setNewMailboxBoxholder}
+        // ----------------------------------------------------------------------
         handleNewMailbox={handleNewMailbox}
       />
     </main>
