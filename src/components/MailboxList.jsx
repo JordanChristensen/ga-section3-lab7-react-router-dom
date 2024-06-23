@@ -10,7 +10,7 @@ export default function MailboxList({ mailboxes }) {
             <MailboxListItem
               key={mailbox._id}
               route={`/mailboxes/${mailbox._id}`}
-              label={`${mailbox.boxholder}'s Mailbox: #${mailbox._id}`}
+              label={`Mailbox ${mailbox._id} is owned by ${mailbox.boxholder}`}
             />
           );
         })}
