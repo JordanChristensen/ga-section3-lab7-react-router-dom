@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import MailboxList from "../components/MailboxList/MailboxList";
 import MailboxForm from "../components/MailboxForm/MailboxForm";
-import MailboxDetails from "../components/MailboxDetails";
+import MailboxDetails from "../components/MailboxDetails/MailboxDetails";
 import LandingPage from "../components/LandingPage";
 import Four0Four from "../components/Four0Four";
 import LetterForm from "../components/LetterForm";
