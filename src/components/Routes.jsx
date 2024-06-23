@@ -1,16 +1,16 @@
 import { Route, Routes } from "react-router-dom";
-import MailboxList from "../components/MailboxList/MailboxList";
-import MailboxForm from "../components/MailboxForm/MailboxForm";
-import MailboxDetails from "../components/MailboxDetails/MailboxDetails";
-import LandingPage from "../components/LandingPage";
-import Four0Four from "../components/Four0Four";
-import LetterForm from "../components/LetterForm";
+import MailboxList from "./MailboxList/MailboxList";
+import MailboxForm from "./MailboxForm/MailboxForm";
+import MailboxDetails from "./MailboxDetails/MailboxDetails";
+import LandingPage from "./LandingPage";
+import Four0Four from "./Four0Four";
+import LetterForm from "./LetterForm";
 
 export function CustomRoutes({
   mailboxes,
   setMailboxes,
-  newMailbox,
-  setNewMailbox,
+  newMailboxBoxholder,
+  setNewMailboxBoxholder,
   handleNewMailbox,
 }) {
   return (
@@ -29,9 +29,9 @@ export function CustomRoutes({
         element={
           <MailboxForm
             mailboxes={mailboxes}
-            newMailbox={newMailbox}
+            newMailboxBoxholder={newMailboxBoxholder}
             setMailboxes={setMailboxes}
-            setNewMailbox={setNewMailbox}
+            setNewMailboxBoxholder={setNewMailboxBoxholder}
           />
         }
       />
