@@ -4,7 +4,7 @@ import * as manageMailboxes from "./utils/manageMailboxes";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { initMailboxes } from "./data/initMailboxes";
-import { CustomRoutes } from "./Routes/Routes";
+import { RoutesComponent } from "./components/Routes";
 import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";
 
 function Mailbox() {
@@ -24,7 +24,7 @@ function Mailbox() {
   return (
     <main>
       <Navbar />
-      <CustomRoutes
+      <RoutesComponent
         mailboxes={mailboxes}
         setMailboxes={setMailboxes}
         // ------------------ @HERE: how to track form data??? ------------------

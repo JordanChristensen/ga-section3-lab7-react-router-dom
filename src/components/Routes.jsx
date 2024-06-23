@@ -6,7 +6,7 @@ import LandingPage from "./LandingPage";
 import Four0Four from "./Four0Four";
 import LetterForm from "./LetterForm";
 
-export function CustomRoutes({
+export function RoutesComponent({
   mailboxes,
   setMailboxes,
   newMailboxBoxholder,
