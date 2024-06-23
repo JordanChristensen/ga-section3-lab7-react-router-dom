@@ -6,7 +6,14 @@ export default function MailboxDetails({ mailboxes }) {
   // ----------------
   // ----------------
   const thisMailboxId = useParams();
-  console.log(thisMailboxId);
+  // WHYYYY ---> is boxSize and boxHolder..... NOT AVAILABLE??
+  console.log("URL params provides: ", thisMailboxId);
+  console.log(...mailboxes);
+  mailboxes.map((mailbox) => {
+    if (mailbox._id === thisMailboxId) {
+      console.log(mailbox.boxholder);
+    }
+  });
   // ----------------
   // ----------------
   //
