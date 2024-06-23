@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import MailboxList from "../components/MailboxList";
+import MailboxList from "../components/MailboxList/MailboxList";
 import MailboxForm from "../components/MailboxForm/MailboxForm";
 import MailboxDetails from "../components/MailboxDetails";
 import LandingPage from "../components/LandingPage";
