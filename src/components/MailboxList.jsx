@@ -1,4 +1,4 @@
-import MailboxListItem from "./MailboxListItem";
+import { Link } from "react-router-dom";
 
 export default function MailboxList({ mailboxes }) {
   return (
@@ -7,11 +7,9 @@ export default function MailboxList({ mailboxes }) {
       <ul>
         {mailboxes?.map((mailbox) => {
           return (
-            <MailboxListItem
-              key={mailbox._id}
-              route={`/mailboxes/${mailbox._id}`}
-              label={`Mailbox ${mailbox._id} is owned by ${mailbox.boxholder}`}
-            />
+            <Link key={mailbox._id} to={`/mailboxes/${mailbox._id}`}>
+              Mailbox ${mailbox._id} is owned by ${mailbox.boxholder}
+            </Link>
           );
         })}
       </ul>

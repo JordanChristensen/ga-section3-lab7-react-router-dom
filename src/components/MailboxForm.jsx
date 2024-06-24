@@ -1,6 +1,4 @@
 import { useState } from "react";
-import MailboxFormInput from "./MailboxFormInput";
-import MailboxFormSelect from "./MailboxFormSelect";
 import { useNavigate } from "react-router-dom";
 
 export default function MailboxForm({ mailboxes, setMailboxes }) {
@@ -29,18 +27,24 @@ export default function MailboxForm({ mailboxes, setMailboxes }) {
     <section>
       <h1>New mailbox</h1>
       <form onSubmit={handleSubmit}>
-        <MailboxFormInput
-          type={"text"}
-          id={"boxholder"}
-          label={"Enter a boxholder:"}
-          handleInputChange={handleInputChange}
+        <label htmlFor="boxholder">Enter a boxholder:</label>
+        <input
+          type="text"
+          name="boxholder"
+          id="boxholder"
+          onChange={handleInputChange}
         />
-        <MailboxFormSelect
-          id={"boxSize"}
-          label={"Select a box size:"}
-          handleInputChange={handleInputChange}
-          formData={formData}
-        />
+        <label htmlFor="boxSize">Select a box size:</label>
+        <select
+          name="boxSize"
+          id="boxSize"
+          value={formData.newBoxSize}
+          onChange={handleInputChange}
+        >
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+        </select>
         <button type="submit">Add book</button>
       </form>
     </section>
