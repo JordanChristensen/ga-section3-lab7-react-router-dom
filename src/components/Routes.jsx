@@ -6,19 +6,9 @@ import LandingPage from "./LandingPage";
 import Four0Four from "./Four0Four";
 import LetterForm from "./LetterForm";
 
-export function RoutesComponent({
-  mailboxes,
-  setMailboxes,
-  newMailboxBoxholder,
-  setNewMailboxBoxholder,
-  handleNewMailbox,
-}) {
+export function RoutesComponent({ mailboxes, setMailboxes }) {
   return (
-    <Routes
-      mailboxes={mailboxes}
-      setMailboxes={setMailboxes}
-      handleNewMailbox={handleNewMailbox}
-    >
+    <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route
         path="/mailboxes"
@@ -27,12 +17,7 @@ export function RoutesComponent({
       <Route
         path="/new-mailbox"
         element={
-          <MailboxForm
-            mailboxes={mailboxes}
-            newMailboxBoxholder={newMailboxBoxholder}
-            setMailboxes={setMailboxes}
-            setNewMailboxBoxholder={setNewMailboxBoxholder}
-          />
+          <MailboxForm mailboxes={mailboxes} setMailboxes={setMailboxes} />
         }
       />
       <Route

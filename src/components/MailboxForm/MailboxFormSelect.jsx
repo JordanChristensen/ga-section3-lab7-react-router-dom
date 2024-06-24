@@ -1,4 +1,4 @@
-export default function MailboxFormSelect({ id, label, handleSelectChange }) {
+export default function MailboxFormSelect({ id, label, handleInputChange }) {
   return (
     <>
       <label htmlFor={id}>{label}</label>
@@ -6,7 +6,7 @@ export default function MailboxFormSelect({ id, label, handleSelectChange }) {
         name={id}
         id={id}
         value={FormData.newBoxSize}
-        onChange={handleSelectChange}
+        onChange={handleInputChange}
       >
         <option value="Small">Small</option>
         <option value="Medium">Medium</option>

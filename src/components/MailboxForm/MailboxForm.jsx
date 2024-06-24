@@ -1,83 +1,47 @@
 import { useState } from "react";
 import MailboxFormInput from "./MailboxFormInput";
 import MailboxFormSelect from "./MailboxFormSelect";
+import { useNavigate } from "react-router-dom";
 
-export default function MailboxForm({
-  mailboxes,
-  setMailboxes,
-  // ------------------ @HERE: how to track form data??? ------------------
-  // newMailboxBoxholder,
-  // setNewMailboxBoxholder,
-  // ----------------------------------------------------------------------
-}) {
-  const newIndex = mailboxes.length + 1;
+export default function MailboxForm({ mailboxes, setMailboxes }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    newBoxHolder: "",
-    newBoxId: newIndex,
-    newBoxSize: null,
+    boxholder: "",
+    _id: mailboxes.length + 1,
+    boxSize: null,
   });
 
   function handleSubmit(e) {
     e.preventDefault();
-    const newBoxholder = newMailboxBoxholder.boxholder;
-    // console.log(newBoxholder);
-
-    if (newMailboxBoxholder.boxholder && newMailbox.boxSize) {
-      //
-      //
-      setMailboxes([...mailboxes, newMailbox]);
-      // setNewMailbox({  title: "", author: "" });
-    }
+    console.log(formData);
+    setMailboxes([...mailboxes, formData]);
+    navigate("/mailboxes");
   }
 
   function handleInputChange(e) {
-    setNewMailboxBoxholder({
-      ...newMailboxBoxholder,
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value,
     });
-    handleSetFormData();
-  }
-
-  function handleSetFormData() {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      newBoxHolder: newMailboxBoxholder,
-    }));
-  }
-
-  function handleSelectChange(e) {
-    const { value } = e.target;
-    // console.log(value);
-    console.log(formData);
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      newBoxSize: value,
-    }));
-    console.log(formData);
   }
 
   return (
     <section>
       <h1>New mailbox</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <MailboxFormInput
           type={"text"}
           id={"boxholder"}
           label={"Enter a boxholder:"}
           handleInputChange={handleInputChange}
         />
-        {/*  */}
-        {/*  */}
-        {/* ------ something is wrong: select/option data not submitting with form data ----- */}
-        {/*  */}
-        {/*  */}
         <MailboxFormSelect
           id={"boxSize"}
           label={"Select a box size:"}
-          handleSelectChange={handleSelectChange}
+          handleInputChange={handleInputChange}
           formData={formData}
         />
-        <button onClick={(e) => handleSubmit(e)}>Add book</button>
+        <button type="submit">Add book</button>
       </form>
     </section>
   );
