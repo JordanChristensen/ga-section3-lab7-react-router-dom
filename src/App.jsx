@@ -5,15 +5,16 @@ import { ErrorBoundary } from "react-error-boundary";
 import { initMailboxes } from "./data/initMailboxes";
 import { initLetters } from "./data/initLetters";
 
+import Four0Four from "./utils/Four0Four";
+import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";
 import "./App.css";
+
 import Navbar from "./components/Navbar";
 import MailboxList from "./components/MailboxList";
 import MailboxForm from "./components/MailboxForm";
 import MailboxDetails from "./components/MailboxDetails";
 import LandingPage from "./components/LandingPage";
-import Four0Four from "./components/Four0Four";
 import LetterForm from "./components/LetterForm";
-import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";
 
 function Mailbox() {
   const [mailboxes, setMailboxes] = useState(initMailboxes);
