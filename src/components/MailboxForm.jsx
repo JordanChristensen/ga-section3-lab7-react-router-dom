@@ -11,7 +11,8 @@ export default function MailboxForm({ mailboxes, setMailboxes }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(formData);
+    if (!formData.boxholder) return alert("Please add a boxholder.");
+
     setMailboxes([...mailboxes, formData]);
     navigate("/mailboxes");
   }
@@ -25,7 +26,6 @@ export default function MailboxForm({ mailboxes, setMailboxes }) {
 
   return (
     <section>
-      <h1>New mailbox</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="boxholder">Enter a boxholder:</label>
         <input
@@ -38,14 +38,14 @@ export default function MailboxForm({ mailboxes, setMailboxes }) {
         <select
           name="boxSize"
           id="boxSize"
-          value={formData.newBoxSize}
+          value="{formData.newBoxSize}"
           onChange={handleInputChange}
         >
           <option value="Small">Small</option>
           <option value="Medium">Medium</option>
           <option value="Large">Large</option>
         </select>
-        <button type="submit">Add book</button>
+        <button type="submit">Submit</button>
       </form>
     </section>
   );
