@@ -1,9 +1,17 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
+
+import { initMailboxes } from "./data/initMailboxes";
+
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { initMailboxes } from "./data/initMailboxes";
-import { RoutesComponent } from "./components/Routes";
+import MailboxList from "./components/MailboxList";
+import MailboxForm from "./components/MailboxForm";
+import MailboxDetails from "./components/MailboxDetails";
+import LandingPage from "./components/LandingPage";
+import Four0Four from "./components/Four0Four";
+import LetterForm from "./components/LetterForm";
 import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";
 
 function Mailbox() {
@@ -12,10 +20,25 @@ function Mailbox() {
   return (
     <main>
       <Navbar />
-      <RoutesComponent
-        mailboxes={mailboxes}
-        setMailboxes={setMailboxes}
-      />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/mailboxes"
+          element={<MailboxList mailboxes={mailboxes} />}
+        />
+        <Route
+          path="/new-mailbox"
+          element={
+            <MailboxForm mailboxes={mailboxes} setMailboxes={setMailboxes} />
+          }
+        />
+        <Route
+          path="/mailboxes/:mailboxId"
+          element={<MailboxDetails mailboxes={mailboxes} />}
+        />
+        <Route path="/new-letter" element={<LetterForm />} />
+        <Route path="*" element={<Four0Four />} />
+      </Routes>
     </main>
   );
 }
