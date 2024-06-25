@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import { initMailboxes } from "./data/initMailboxes";
 import { RoutesComponent } from "./components/Routes";
 import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";

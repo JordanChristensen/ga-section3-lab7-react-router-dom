@@ -7,9 +7,11 @@ export default function MailboxList({ mailboxes }) {
       <ul>
         {mailboxes?.map((mailbox) => {
           return (
-            <Link key={mailbox._id} to={`/mailboxes/${mailbox._id}`}>
-              Mailbox ${mailbox._id} is owned by ${mailbox.boxholder}
-            </Link>
+            <li key={mailbox._id}>
+              <Link to={`/mailboxes/${mailbox._id}`}>
+                Mailbox {mailbox._id} is owned by {mailbox.boxholder}
+              </Link>
+            </li>
           );
         })}
       </ul>
