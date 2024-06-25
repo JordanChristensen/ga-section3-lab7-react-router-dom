@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 
 import { initMailboxes } from "./data/initMailboxes";
+import { initLetters } from "./data/initLetters";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -16,6 +17,7 @@ import fallbackForErrorBoundary from "./utils/fallbackForErrorBoundary";
 
 function Mailbox() {
   const [mailboxes, setMailboxes] = useState(initMailboxes);
+  const [letters, setLetters] = useState(initLetters);
 
   return (
     <main>
@@ -36,7 +38,14 @@ function Mailbox() {
           path="/mailboxes/:mailboxId"
           element={<MailboxDetails mailboxes={mailboxes} />}
         />
-        <Route path="/new-letter" element={<LetterForm />} />
+        {/* <Route 
+        path="/letters"
+        element={< />}
+         /> */}
+        <Route
+          path="/new-letter"
+          element={<LetterForm setLetters={setLetters} />}
+        />
         <Route path="*" element={<Four0Four />} />
       </Routes>
     </main>
