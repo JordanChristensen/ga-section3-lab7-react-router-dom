@@ -1,19 +1,117 @@
+:root {
+  --primary: rgb(0, 219, 201);
+  --success: rgb(0, 128, 0);
+  --danger: rgb(255, 0, 0);
+  --warning: rgb(255, 180, 52);
+  --white: rgb(255, 255, 255);
+  --blue: rgb(0, 0, 255);
+}
+
+body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
 #root {
-  /* max-width: 1280px; */
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
-
-a {
-  text-decoration: none;
+ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  li {
+    margin-right: 16px;
+  }
 }
-#navbar {
+form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 80%;
+  input,
+  select,
+  button,
+  textarea {
+    padding: 8px;
+    border-radius: 8px;
+  }
+  label,
+  button {
+    margin: 16px 0px;
+    font-weight: bold;
+  }
+  textarea {
+    line-height: 5rem;
+  }
+  footer {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+a {
+  color: #6464ff;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.right {
+  text-align: right;
+}
+.success {
+  background-color: var(--success);
+  color: var(--white);
+}
+.danger {
+  background-color: var(--danger);
+}
+.warning {
+  background-color: var(--warning);
+}
+.space-around {
   display: flex;
   justify-content: space-around;
-  width: 90%;
 }
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-2 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.my-1 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.ml-2 {
+  margin-left: 15px;
+}
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.mail-box {
+  border: 2px solid white;
+  padding: 20px;
+}
+.mailboxList,
+.letterList {
+  ul {
+    display: initial;
+    text-align: left;
+  }
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -27,6 +125,11 @@ a {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+#navbar {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -39,32 +142,5 @@ a {
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-a {
-  font-size: 1.3rem;
-}
-
-ul {
-  padding: 0;
-  display: flex;
-  list-style: none;
-  li {
-    margin-right: 16px;
-  }
-}
-
-.mailboxList, .letterList {
-  ul {
-    display: initial;
-    text-align: left;
   }
 }
