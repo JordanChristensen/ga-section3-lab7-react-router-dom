@@ -16,6 +16,7 @@ import MailboxDetails from "./components/MailboxDetails";
 import LandingPage from "./components/LandingPage";
 import LetterList from "./components/LetterList";
 import LetterForm from "./components/LetterForm";
+// import LetterDetails from "./components/LetterDetails";
 
 function Mailbox() {
   const [mailboxes, setMailboxes] = useState(initMailboxes);

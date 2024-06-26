@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 export default function LetterForm({ letters, setLetters }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    // boxholder: "",
-    // _id: letters.length + 1,
-    // boxSize: null,
+    senderMailboxId: null,
+    senderName: "",
+    recipientMailboxId: null,
+    recipientName: "",
+    message: "",
   });
 
   function handleSubmit(e) {
@@ -27,20 +29,18 @@ export default function LetterForm({ letters, setLetters }) {
     <section>
       <h1>Letter form</h1>
       <form onSubmit={handleSubmit}>
-        <select name="" id="">
+        <select name="" id="" onChange={handleInputChange}>
           {/* {letters.map((letter) => (
             <option key={letter._id} value={letter._id}></option>
           ))} */}
         </select>
 
         <label htmlFor=""></label>
-        <input type="text" />
+        <input type="text" onChange={handleInputChange} />
 
         <label htmlFor=""></label>
-        <textarea name="" id=""></textarea>
+        <textarea name="" id="" onChange={handleInputChange}></textarea>
       </form>
     </section>
   );
 }
-
-
