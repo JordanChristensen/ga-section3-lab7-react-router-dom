@@ -28,6 +28,9 @@ ul {
     margin-right: 16px;
   }
 }
+table {
+  margin: 0 auto;
+}
 form {
   margin: 0 auto;
   display: flex;
