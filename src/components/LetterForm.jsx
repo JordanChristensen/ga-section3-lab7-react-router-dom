@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function LetterForm({ letters, setLetters }) {
+export default function LetterForm({ mailboxes, letters, setLetters }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     senderMailboxId: null,
@@ -13,12 +13,6 @@ export default function LetterForm({ letters, setLetters }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log(formData);
-
-    if (!formData.recipient || !formData.message)
-      return alert(
-        "Please include a recipient and message before sending email."
-      );
     setLetters([...letters, formData]);
     navigate("/letters");
   }
@@ -33,34 +27,36 @@ export default function LetterForm({ letters, setLetters }) {
   return (
     <section>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="mailbox">Mailbox to send from:</label>
+        <label htmlFor="senderName">Sender:</label>
         <select
-          name="mailbox"
-          id="mailbox"
+          name="senderName"
+          id="senderName"
           onChange={handleInputChange}
           required
         >
-          {/* {letters.map((letter) => (
-            <option key={letter._id} value={letter._id}></option>
-          ))} */}
+          {mailboxes.map((mailbox) => (
+            <option key={`Sender = ${mailbox._id}`} value={mailbox._id}>
+              Box {mailbox._id}, owned by {mailbox.boxholder}
+            </option>
+          ))}
         </select>
 
-        <label htmlFor="recipient">Recipient:</label>
-        <input
-          type="text"
-          id="recipient"
-          name="recipient"
+        <label htmlFor="recipientName">Recipient:</label>
+        <select
+          name="recipientName"
+          id="recipientName"
           onChange={handleInputChange}
-          required
-        />
+        >
+          {mailboxes.map((mailbox) => (
+            <option key={`Recipient = ${mailbox._id}`} value={mailbox._id}>
+              Box {mailbox._id}, owned by {mailbox.boxholder}
+            </option>
+          ))}
+        </select>
 
         <label htmlFor="message">Message:</label>
-        <textarea
-          name="message"
-          id="message"
-          onChange={handleInputChange}
-          required
-        />
+        <textarea name="message" id="message" onChange={handleInputChange} />
+
         <footer>
           <button type="submit" className="success">
             Submit

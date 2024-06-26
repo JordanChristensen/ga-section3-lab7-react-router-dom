@@ -11,6 +11,7 @@ export default function MailboxForm({ mailboxes, setMailboxes }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     if (!formData.boxholder) return alert("Please add a boxholder.");
 
     setMailboxes([...mailboxes, formData]);

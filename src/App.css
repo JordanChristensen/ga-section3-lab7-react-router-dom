@@ -50,7 +50,7 @@ form {
     font-weight: bold;
   }
   textarea {
-    line-height: 5rem;
+    height: 15vh;
   }
   footer {
     display: flex;

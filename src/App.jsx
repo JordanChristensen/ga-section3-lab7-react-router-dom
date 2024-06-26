@@ -39,7 +39,20 @@ function Mailbox() {
         />
         <Route
           path="/mailboxes/:mailboxId"
-          element={<MailboxDetails mailboxes={mailboxes} />}
+          element={
+            <ErrorBoundary
+              FallbackComponent={fallbackForErrorBoundary}
+              onError={(error, errorInfo) => {
+                console.error(
+                  "React-error-boundary caught an error",
+                  error,
+                  errorInfo
+                );
+              }}
+            >
+              <MailboxDetails mailboxes={mailboxes} />
+            </ErrorBoundary>
+          }
         />
         <Route path="/letters" element={<LetterList letters={letters} />} />
         <Route
@@ -48,7 +61,13 @@ function Mailbox() {
         ></Route>
         <Route
           path="/new-letter"
-          element={<LetterForm setLetters={setLetters} />}
+          element={
+            <LetterForm
+              mailboxes={mailboxes}
+              letters={letters}
+              setLetters={setLetters}
+            />
+          }
         />
         <Route path="*" element={<Four0Four />} />
       </Routes>
