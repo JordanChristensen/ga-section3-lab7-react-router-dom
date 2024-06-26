@@ -14,6 +14,11 @@ export default function LetterForm({ letters, setLetters }) {
   function handleSubmit(e) {
     e.preventDefault();
     // console.log(formData);
+
+    if (!formData.recipient || !formData.message)
+      return alert(
+        "Please include a recipient and message before sending email."
+      );
     setLetters([...letters, formData]);
     navigate("/letters");
   }
@@ -27,19 +32,43 @@ export default function LetterForm({ letters, setLetters }) {
 
   return (
     <section>
-      <h1>Letter form</h1>
       <form onSubmit={handleSubmit}>
-        <select name="" id="" onChange={handleInputChange}>
+        <label htmlFor="mailbox">Mailbox to send from:</label>
+        <select
+          name="mailbox"
+          id="mailbox"
+          onChange={handleInputChange}
+          required
+        >
           {/* {letters.map((letter) => (
             <option key={letter._id} value={letter._id}></option>
           ))} */}
         </select>
 
-        <label htmlFor=""></label>
-        <input type="text" onChange={handleInputChange} />
+        <label htmlFor="recipient">Recipient:</label>
+        <input
+          type="text"
+          id="recipient"
+          name="recipient"
+          onChange={handleInputChange}
+          required
+        />
 
-        <label htmlFor=""></label>
-        <textarea name="" id="" onChange={handleInputChange}></textarea>
+        <label htmlFor="message">Message:</label>
+        <textarea
+          name="message"
+          id="message"
+          onChange={handleInputChange}
+          required
+        />
+        <footer>
+          <button type="submit" className="success">
+            Submit
+          </button>
+          <button type="reset" className="warning">
+            Reset
+          </button>
+        </footer>
       </form>
     </section>
   );

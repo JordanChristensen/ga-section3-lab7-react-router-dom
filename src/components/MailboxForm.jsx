@@ -45,7 +45,14 @@ export default function MailboxForm({ mailboxes, setMailboxes }) {
           <option value="Medium">Medium</option>
           <option value="Large">Large</option>
         </select>
-        <button type="submit">Submit</button>
+        <footer>
+          <button type="submit" className="success">
+            Submit
+          </button>
+          <button type="reset" className="warning">
+            Reset
+          </button>
+        </footer>
       </form>
     </section>
   );
