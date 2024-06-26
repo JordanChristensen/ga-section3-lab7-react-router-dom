@@ -14,6 +14,7 @@ import MailboxList from "./components/MailboxList";
 import MailboxForm from "./components/MailboxForm";
 import MailboxDetails from "./components/MailboxDetails";
 import LandingPage from "./components/LandingPage";
+import LetterList from "./components/LetterList";
 import LetterForm from "./components/LetterForm";
 
 function Mailbox() {
@@ -39,10 +40,7 @@ function Mailbox() {
           path="/mailboxes/:mailboxId"
           element={<MailboxDetails mailboxes={mailboxes} />}
         />
-        {/* <Route 
-        path="/letters"
-        element={< />}
-         /> */}
+        <Route path="/letters" element={<LetterList letters={letters} />} />
         <Route
           path="/new-letter"
           element={<LetterForm setLetters={setLetters} />}
