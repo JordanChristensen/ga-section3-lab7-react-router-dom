@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom";
 export default function LetterForm({ mailboxes, letters, setLetters }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
+    _id: mailboxes.length + 1,
     senderMailboxId: null,
-    senderName: "",
+    senderName: "John",
     recipientMailboxId: null,
-    recipientName: "",
+    recipientName: "John",
     message: "",
   });
 
@@ -35,7 +36,7 @@ export default function LetterForm({ mailboxes, letters, setLetters }) {
           required
         >
           {mailboxes.map((mailbox) => (
-            <option key={`Sender = ${mailbox._id}`} value={mailbox._id}>
+            <option key={`Sender = ${mailbox._id}`} value={mailbox.boxholder}>
               Box {mailbox._id}, owned by {mailbox.boxholder}
             </option>
           ))}
@@ -48,7 +49,10 @@ export default function LetterForm({ mailboxes, letters, setLetters }) {
           onChange={handleInputChange}
         >
           {mailboxes.map((mailbox) => (
-            <option key={`Recipient = ${mailbox._id}`} value={mailbox._id}>
+            <option
+              key={`Recipient = ${mailbox._id}`}
+              value={mailbox.boxholder}
+            >
               Box {mailbox._id}, owned by {mailbox.boxholder}
             </option>
           ))}

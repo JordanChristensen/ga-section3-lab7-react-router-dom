@@ -6,14 +6,14 @@ export default function MailboxForm({ mailboxes, setMailboxes }) {
   const [formData, setFormData] = useState({
     boxholder: "",
     _id: mailboxes.length + 1,
-    boxSize: null,
+    boxSize: "small",
   });
 
   function handleSubmit(e) {
     e.preventDefault();
 
     if (!formData.boxholder) return alert("Please add a boxholder.");
-
+    console.log(formData);
     setMailboxes([...mailboxes, formData]);
     navigate("/mailboxes");
   }
@@ -39,7 +39,7 @@ export default function MailboxForm({ mailboxes, setMailboxes }) {
         <select
           name="boxSize"
           id="boxSize"
-          value="{formData.newBoxSize}"
+          value={formData.boxSize}
           onChange={handleInputChange}
         >
           <option value="Small">Small</option>
